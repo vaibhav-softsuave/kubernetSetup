@@ -47,11 +47,3 @@ minikube start --driver=none  // for IOS
 ```
 	cmd  minikube service myServiceName  
 ```
-
-I got the same issue resolved it by changing minikube base driver to hyperv from docker.
-
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
-Your pc will restart after that you can say
-
-minikube config set driver hyperv
-Then minikube start will start you with that driver.
