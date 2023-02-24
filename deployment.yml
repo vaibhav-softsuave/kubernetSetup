@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetesapp-deployment
+  labels:
+    app: kubernetesapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubernetesapp
+  template:
+    metadata:
+      labels:
+        app: kubernetesapp 
+    spec:
+      containers:
+      - name: nodeserver
+        image: vaibhavsoftsuave/kubernetesapp:latest
+        ports:
+        - containerPort: 3000
